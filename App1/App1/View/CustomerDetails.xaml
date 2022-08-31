@@ -1,0 +1,59 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="App1.View.CustomerDetails">
+    <ContentPage.Content>
+        <StackLayout>
+            
+            <Frame BackgroundColor="#2196F3" Padding="10">
+                <Label x:Name="title" HorizontalTextAlignment="Center" TextColor="White" 
+                       FontSize="32"/>
+            </Frame>
+
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="0.5*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+                <Label Text="Κωδικός: " Grid.Row="0" Grid.Column="0" Margin="10,0,0,0" 
+                       FontSize="18" TextColor="Black"/>
+                <Label x:Name="txtCode" Grid.Row="0" Grid.Column="1" FontSize="22" 
+                       TextColor="#2196F3"/>
+
+                <Label Text="Όνομα: " Grid.Row="1" Grid.Column="0" Margin="10,0,0,0" 
+                       FontSize="18" TextColor="Black"/>
+                <Label x:Name="txtName" Grid.Row="1" Grid.Column="1" FontSize="22" 
+                       TextColor="#2196F3"/>
+
+                <Label Text="ΑΦΜ: " Grid.Row="2" Grid.Column="0" Margin="10,0,0,0" 
+                       FontSize="18" TextColor="Black"/>
+                <Label x:Name="txtAfm" Grid.Row="2" Grid.Column="1" FontSize="22" 
+                       TextColor="#2196F3"/>
+
+                <Label Text="Τηλ.: " Grid.Row="3" Grid.Column="0" Margin="10,0,0,0" 
+                       FontSize="18" TextColor="Black"/>
+                <Label x:Name="txtTel" Grid.Row="3" Grid.Column="1" FontSize="22" 
+                       TextColor="#2196F3"/>
+
+                <Label Text="Διεύθ.: " Grid.Row="4" Grid.Column="0" Margin="10,0,0,0" 
+                       FontSize="18" TextColor="Black"/>
+                <Label x:Name="txtAddress" Grid.Row="4" Grid.Column="1" FontSize="22" 
+                       TextColor="#2196F3"/>
+
+                <Button Text="OK" Grid.Row="5" Grid.ColumnSpan="2" Clicked="OkClicked" 
+                        HorizontalOptions="Center" TextColor="White" 
+                        BackgroundColor="#2196F3"></Button>
+                
+            </Grid>
+            
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,59 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:ViewModel="clr-namespace:App1.ViewModel;assembly=App1"
+             x:Class="App1.MainPage">
+
+    <ContentPage.Content>
+        <StackLayout>
+
+            <Frame Grid.Column="0" BackgroundColor="#2196F3" Padding="10">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="0.2*"/>
+                    </Grid.ColumnDefinitions>
+
+                    <Label Text="Customers" HorizontalTextAlignment="Center" 
+                           TextColor="White" FontSize="36"/>
+                    <Button Text="+" Grid.Column="1" TextColor="White" FontSize="Large" 
+                            BackgroundColor="Transparent" BorderColor="White"
+                                Clicked="AddClicked"/>
+                </Grid>
+            </Frame>
+
+            <ListView x:Name="lvCustomers"  
+                          ItemsSource="{Binding Customers}"
+                          ItemTapped="CustomerClicked"
+                          HasUnevenRows="True"
+                          SeparatorColor="Transparent">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <ViewCell.ContextActions>
+                                <MenuItem Text="Edit" Clicked="EditClicked" 
+                                          CommandParameter="{Binding .}"></MenuItem>
+                                <MenuItem Text="Delete"></MenuItem>
+                            </ViewCell.ContextActions>
+
+                            <Grid BackgroundColor="#2196F3">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="0.3*"/>
+                                    <ColumnDefinition Width="0.5*"/>
+                                    <ColumnDefinition Width="0.2*"/>
+                                </Grid.ColumnDefinitions>
+
+                                <Label Text="{Binding Code}" TextColor="White"  
+                                       FontSize="Medium"  Grid.Column="0"/>
+                                <Label Text="{Binding Name}" TextColor="White" 
+                                       FontSize="Medium" Grid.Column="1"/>
+                            </Grid>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+
+        </StackLayout>
+        
+    </ContentPage.Content>
+</ContentPage>

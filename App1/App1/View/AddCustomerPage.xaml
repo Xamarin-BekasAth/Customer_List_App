@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:ViewModel="clr-namespace:App1.ViewModel;assembly=App1"
+             x:Class="App1.AddCustomerPage">
+
+    <ContentPage.BindingContext>
+        <ViewModel:AddCustomerViewModel/>
+    </ContentPage.BindingContext>
+    
+    <ContentPage.Content>
+        <StackLayout>
+            
+            <Frame BackgroundColor="#2196F3" Padding="10">
+                <Label Text="Add Customer" HorizontalTextAlignment="Center" TextColor="White" 
+                       FontSize="36"/>
+            </Frame>
+
+            <Entry x:Name="txtCode" Placeholder="Code" HorizontalTextAlignment="Center" 
+                   Text="{Binding newCustomer.Code}"/>
+            <Entry x:Name="txtName" Placeholder="Name" HorizontalTextAlignment="Center" 
+                   Text="{Binding newCustomer.Name}"/>
+            <Entry x:Name="txtAFM" Placeholder="AFM" HorizontalTextAlignment="Center" 
+                   Text="{Binding newCustomer.Afm}"/>
+            <Entry x:Name="txtTel" Placeholder="Tel" HorizontalTextAlignment="Center" 
+                   Text="{Binding newCustomer.Tel}"/>
+            <Entry x:Name="txtAddress" Placeholder="Address" HorizontalTextAlignment="Center" 
+                   Text="{Binding newCustomer.Address}"/>
+            
+            <Button x:Name="btnAdd" Text="Add" TextColor="White" BackgroundColor="Green" 
+                    Command="{Binding AddCmd}" />
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

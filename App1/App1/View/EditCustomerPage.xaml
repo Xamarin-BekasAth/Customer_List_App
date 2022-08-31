@@ -1,0 +1,64 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:ViewModel="clr-namespace:App1.ViewModel;assembly=App1"
+             x:Class="App1.View.EditCustomerPage">
+    <ContentPage.BindingContext>
+        <ViewModel:EditCustomerViewModel/>
+    </ContentPage.BindingContext>
+
+        <ContentPage.Content>
+        <StackLayout VerticalOptions="Fill">
+            
+            <Frame BackgroundColor="#2196F3" >
+                <Label x:Name="title" HorizontalTextAlignment="Center" 
+                       TextColor="White" FontSize="32"/>
+            </Frame>
+            
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="0.5*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                
+                <Entry x:Name="txtId" IsVisible="false" Text="{Binding customer.Id}"/>
+                
+                <Label Text="Κωδικός: " Grid.Row="0" Grid.Column="0" Margin="10,0,0,0" 
+                       FontSize="18" TextColor="Black" VerticalOptions="Center"/>
+                <Entry x:Name="txtCode" Grid.Row="0" Grid.Column="1" FontSize="22" 
+                       TextColor="#2196F3" Text="{Binding customer.Code}"/>
+
+                <Label Text="Όνομα: " Grid.Row="1" Grid.Column="0" Margin="10,0,0,0" 
+                       FontSize="18" TextColor="Black" VerticalOptions="Center"/>
+                <Entry x:Name="txtName" Grid.Row="1" Grid.Column="1" FontSize="22" 
+                       TextColor="#2196F3" Text="{Binding customer.Name}"/>
+
+                <Label Text="ΑΦΜ: " Grid.Row="2" Grid.Column="0" Margin="10,0,0,0" 
+                       FontSize="18" TextColor="Black" VerticalOptions="Center"/>
+                <Entry x:Name="txtAfm" Grid.Row="2" Grid.Column="1" FontSize="22" 
+                       TextColor="#2196F3" Text="{Binding customer.Afm}"/>
+
+                <Label Text="Τηλ.: " Grid.Row="3" Grid.Column="0" Margin="10,0,0,0" 
+                       FontSize="18" TextColor="Black" VerticalOptions="Center"/>
+                <Entry x:Name="txtTel" Grid.Row="3" Grid.Column="1" FontSize="22" 
+                       TextColor="#2196F3" Text="{Binding customer.Tel}"/>
+
+                <Label Text="Διεύθ.: " Grid.Row="4" Grid.Column="0" Margin="10,0,0,0" 
+                       FontSize="18" TextColor="Black" VerticalOptions="Center"/>
+                <Entry x:Name="txtAddress" Grid.Row="4" Grid.Column="1" FontSize="22" 
+                       TextColor="#2196F3" Text="{Binding customer.Address}"/>
+
+                <Button Text="Submit" Grid.Row="5" Grid.ColumnSpan="2" HorizontalOptions="Center" 
+                        TextColor="White" BackgroundColor="#2196F3" Command="{Binding EditCmd}"/>
+
+            </Grid>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
